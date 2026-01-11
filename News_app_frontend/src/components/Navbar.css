@@ -1,0 +1,62 @@
+.navbar {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  z-index: 1000;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00c2ff;
+  border-bottom: 2px solid #00c2ff;
+  padding-bottom: 2px;
+}
+.nav-links a:first-child:hover {
+  border-bottom: none;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none; /* remove underline by default */
+  font-size: 16px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: none; /* ensure no border */
+}
+
+.nav-links a:hover {
+  color: #00c2ff;
+  border-bottom: none; /* remove underline/border on hover */
+  padding-bottom: 2px; /* optional: can be removed too */
+}
+
+a {
+  padding-left: 20px;
+}

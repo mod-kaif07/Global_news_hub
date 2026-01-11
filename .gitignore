@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -26,3 +27,40 @@ node_modules
 dist
 .env
 .vercel
+=======
+# Dependency folders
+**/node_modules/
+
+# Logs
+*.log
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Build output
+**/dist/
+**/build/
+**/.vite/
+**/.next/
+**/.turbo/
+
+# Editor folders
+.vscode/
+.idea/
+
+# Cache
+.eslintcache
+
+# Coverage reports
+coverage/
+>>>>>>> 42611a62167a6a432ff765454bad85ff6413aced

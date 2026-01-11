@@ -81,9 +81,12 @@ const News = () => {
       {/* Search */}
       <div className="flex items-center text-black justify-between p-5">
         <div className="flex  items-center justify-between">
-          <Link to="/">
-            <i className="ri-home-3-line pb-8 text-4xl text-black"></i>
-            <p className="text-xs ">Home</p>
+          <Link
+            to="/"
+            className="flex flex-col items-center justify-center text-black hover:text-blue-600 transition"
+          >
+            <i className="ri-home-3-line text-3xl"></i>
+            <span className="text-xs mt-1">Home</span>
           </Link>
         </div>
         <form onSubmit={formsumbit} className="flex gap-4 ">
