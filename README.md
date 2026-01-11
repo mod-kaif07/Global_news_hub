@@ -1,92 +1,86 @@
-<<<<<<< HEAD
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 📰 Global NewsHub
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Global NewsHub** is a modern news aggregator that displays real-time global headlines using a public API. The project is split into a **React frontend** and a **Node.js + Express backend**, built to be clean, secure, and accessible.
 
-## Expanding the ESLint configuration
+# Global NewsHub
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# 📰 NewsHub
+A lightweight React + Vite frontend for browsing news articles. This repository contains the frontend used to display news fetched from a public news API.
 
-**NewsHub** is a modern news aggregator that displays real-time global headlines using a public API. The project is split into a **React frontend** and a **Node.js + Express backend**, built to be clean, secure, and accessible.
+**Key goals:** simple UI for browsing categories, quick pagination of results, and a modular component design that is easy to extend.
 
-## 🌐 Live Screens
+## Features
 
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/user-attachments/assets/038c6f53-3927-4aed-b713-46d4c8675c33" width="400"/>
-    </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/f13d29dc-feb6-4a16-871a-53282852e5fc" width="400"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/user-attachments/assets/fbc4e059-0424-4abe-8bb1-14b28db34510" width="400"/>
-    </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/14360cff-0d3d-45a8-8e5b-cc0c8bfd1370" width="400"/>
-    </td>
-  </tr>
-</table>
+- Top headlines and search by category
+- Responsive layout with reusable components (`Navbar`, `News`, `Footer`)
+- Easy to configure API integration (see `src/components/Api_file.jsx`)
 
-## 🚀 Features
+## Tech stack
 
-- 🔎 **Top Headlines**: Real-time news from reliable sources using the NewsAPI.
-- 🏠 **Routes**: `/home`, `/about`, `/help`, `/news`.
-- 💡 **Frontend**: Built with **Vite + React** for a fast, modular UI.
-- 🔧 **Backend**: Node.js + Express server with API integration and EJS rendering.
-- ❤️ **Save News** *(planned)*: Users can **save** articles with a **note and date**, stored in the database.
-- 🔐 **Auth Routes** *(coming soon)*: Includes **Login / Signup** for personalized experience.
+- Frontend: React, Vite
+- Bundler: Vite
+- HTTP client: Axios
 
----
+## Quickstart
 
-## 🧠 How It Works
+Prerequisites:
 
-- The backend fetches live news using `node-fetch` and serves it via JSON or renders it with EJS.
-- The frontend displays the articles with interactive buttons like **Read More** and **Save**.
-- Clean UI with future support for storing and revisiting saved articles.
+- Node.js 16+ and npm
 
----
+Install dependencies and run the dev server:
 
-## 📁 Tech Stack
+```bash
+npm install
+npm run dev
+```
 
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Express.js, Node.js, EJS
-- **API**: [NewsAPI.org](https://newsapi.org)
-- **Database**: *(Coming soon - MongoDB)*
+Build for production:
 
----
+```bash
+npm run build
+npm run preview
+```
 
-## 📌 Future Enhancements
+## Configuration (API key)
 
-- 🔖 Save favorite news with custom notes and date.
-- 🧾 Login/Signup system.
-- 🧠 Save history and restore articles via link.
-- 🌙 Dark Mode.
+This app uses a news provider API. Currently the project contains a hard-coded key in `src/components/Api_file.jsx`. For security and portability you should replace that with an environment variable.
 
----
+Recommended: create a `.env` file at the project root with:
 
-## 🧑‍💻 Developer
+```
+VITE_NEWS_API_KEY=your_api_key_here
+```
 
-Developed by **Mohammad Kaif** — exploring full-stack development with JavaScript, React, Node.js, and more.
+Then update `src/components/Api_file.jsx` to use `import.meta.env.VITE_NEWS_API_KEY` instead of a hard-coded string (or set the constant from `process.env` when running a Node-based build step).
 
----
+If you need a quick local change, open [src/components/Api_file.jsx](src/components/Api_file.jsx) and replace the `API_KEY` constant.
 
-## 🔗 Connect with Me
+## Project structure
 
-linkdin :-   https://www.linkedin.com/in/mohammad-kaif-9a0bb6284/
+- `index.html` — Vite entry
+- `src/main.jsx` — App bootstrap
+- `src/App.jsx` — Application shell
+- `src/components/` — Reusable UI components (`Navbar.jsx`, `News.jsx`, `Footer.jsx`, `Api_file.jsx`)
+- `src/Context/NewsContext.jsx` — React context for news state
+
+## Usage notes
+
+- The app queries `everything` endpoint with a category param; the query date and sorting are set in `Api_file.jsx`.
+- To add a new category, call `getTopHeadlines('your-query')` from a component or update the UI to provide the category.
+
+## Contributing
+
+Contributions are welcome. Please open an issue first to discuss major changes. For small fixes:
+
+1. Fork the repo
+2. Create a branch (`feature/your-feature`)
+3. Commit your changes and open a pull request
+
+## License
+
+MIT © 2026
 
 ---
 
-## 📄 License
-
-© 2025 NewsHub. Made with  by Kaif.
->>>>>>> 42611a62167a6a432ff765454bad85ff6413aced
+If you'd like, I can update `src/components/Api_file.jsx` to read the key from `import.meta.env.VITE_NEWS_API_KEY` and add a `.env.example` file. Want me to do that?
